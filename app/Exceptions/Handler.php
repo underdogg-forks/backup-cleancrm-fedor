@@ -48,12 +48,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof HttpException) {
-
-            // normal 404 view page feedback
-            return response()->view('errors.404', [], 404);
-        }
-        
         return parent::render($request, $exception);
     }
 }

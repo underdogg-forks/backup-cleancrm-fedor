@@ -57,6 +57,7 @@
         <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                 <input type="hidden" name="_token" value="{{ Session::token() }}">
+                <input name="_method" type="hidden" value="PUT">
                 <button type="submit" class="btn btn-success">Save Role Changes</button>
             </div>
         </div>

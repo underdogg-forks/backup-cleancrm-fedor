@@ -18,7 +18,7 @@ class RolesController extends Controller
     public function index()
     {
         //
-        $roles = Role::all();
+        $roles = Role::paginate(10);
 
         $params = [
             'title' => 'Roles Listing',

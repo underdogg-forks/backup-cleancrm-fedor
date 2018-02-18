@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
 use App\Permission;
+use Illuminate\Support\Facades\DB;
 
 class PermissionController extends Controller
 {
@@ -163,9 +164,9 @@ class PermissionController extends Controller
         //
         try {
             $permission = Permission::findOrFail($id);
-
+            DB::table("permission_role")->where('permission_id', $id)->delete();
             $permission->delete();
-
+            
             return redirect()->route('permission.index')->with('success', "The Role <strong>$permission->name</strong> has successfully been archived.");
         } catch (ModelNotFoundException $ex) {
             if ($ex instanceof ModelNotFoundException) {

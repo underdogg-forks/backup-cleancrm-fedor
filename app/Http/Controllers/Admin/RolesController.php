@@ -176,6 +176,12 @@ class RolesController extends Controller
 
             $role->delete();
 
+            // Force Delete
+            $role->users()->sync([]); // Delete relationship data
+            $role->permissions()->sync([]); // Delete relationship data
+
+            $role->forceDelete(); // Now force delete will work regardless of whether the pivot table has cascading delete
+
             return redirect()->route('roles.index')->with('success', "The Role <strong>$role->name</strong> has successfully been archived.");
         } catch (ModelNotFoundException $ex) {
             if ($ex instanceof ModelNotFoundException) {

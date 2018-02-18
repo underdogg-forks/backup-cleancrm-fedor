@@ -174,7 +174,7 @@ class RolesController extends Controller
         try {
             $role = Role::findOrFail($id);
 
-            $role->delete();
+            //$role->delete();
 
             // Force Delete
             $role->users()->sync([]); // Delete relationship data

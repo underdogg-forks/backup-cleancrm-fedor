@@ -183,6 +183,13 @@ class UsersController extends Controller
         try {
             $user = User::findOrFail($id);
 
+            // Detach from Role
+            $roles = $user->roles;
+
+            foreach ($roles as $key => $value) {
+                $user->detachRole($value);
+            }
+
             $user->delete();
 
             return redirect()->route('users.index')->with('success', "The user <strong>$user->name</strong> has successfully been archived.");

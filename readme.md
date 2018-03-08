@@ -1,5 +1,5 @@
 
-![alt text](https://raw.githubusercontent.com/ferdousulhaque/laratrust-adminpanel/public/img/view.png)
+![alt text](https://raw.githubusercontent.com/ferdousulhaque/laratrust-adminpanel/master/public/img/view.png)
 
 ## Laravel Laratrust AdminPanel Basic
 <ul>

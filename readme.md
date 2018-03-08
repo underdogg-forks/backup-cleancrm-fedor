@@ -1,5 +1,5 @@
 
-![alt View](https://imgur.com/a/JIlKY)
+![alt View](https://imgur.com/Eq6aGlc)
 
 ## Laravel Laratrust AdminPanel Basic
 <ul>

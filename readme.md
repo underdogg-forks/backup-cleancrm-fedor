@@ -1,4 +1,5 @@
-<img href="https://imgur.com/a/JIlKY" />
+
+![alt View](https://imgur.com/a/JIlKY)
 
 ## Laravel Laratrust AdminPanel Basic
 <ul>

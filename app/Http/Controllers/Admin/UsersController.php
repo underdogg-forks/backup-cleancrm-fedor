@@ -17,6 +17,7 @@ class UsersController extends Controller
         //$this->middleware('role:users');
     }
 
+    // Index Page for Users
     public function index()
     {
         $users = User::paginate(10);
@@ -29,11 +30,7 @@ class UsersController extends Controller
         return view('admin.users.users_list')->with($params);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Create User Page
     public function create()
     {
         $roles = Role::all();
@@ -46,12 +43,7 @@ class UsersController extends Controller
         return view('admin.users.users_create')->with($params);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Store New User
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -73,12 +65,7 @@ class UsersController extends Controller
         return redirect()->route('users.index')->with('success', "The user <strong>$user->name</strong> has successfully been created.");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Delete Confirmation Page
     public function show($id)
     {
         try {
@@ -97,12 +84,7 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Editing User Information Page
     public function edit($id)
     {
         try {
@@ -127,13 +109,7 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Update User Information to DB
     public function update(Request $request, $id)
     {
         try {
@@ -172,12 +148,7 @@ class UsersController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Remove User from DB with detaching Role
     public function destroy($id)
     {
         try {

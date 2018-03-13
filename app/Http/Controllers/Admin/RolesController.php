@@ -10,11 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class RolesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Roles Listing Page
     public function index()
     {
         //
@@ -28,11 +24,7 @@ class RolesController extends Controller
         return view('admin.roles.roles_list')->with($params);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Roles Creation Page
     public function create()
     {
         //
@@ -46,12 +38,7 @@ class RolesController extends Controller
         return view('admin.roles.roles_create')->with($params);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Roles Store to DB
     public function store(Request $request)
     {
         //
@@ -70,12 +57,7 @@ class RolesController extends Controller
         return redirect()->route('roles.index')->with('success', "The role <strong>$role->name</strong> has successfully been created.");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Roles Delete Confirmation Page
     public function show($id)
     {
         //
@@ -95,12 +77,7 @@ class RolesController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Roles Editing Page
     public function edit($id)
     {
         //
@@ -124,13 +101,7 @@ class RolesController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Roles Update to DB
     public function update(Request $request, $id)
     {
         //
@@ -162,12 +133,7 @@ class RolesController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Delete Roles from DB
     public function destroy($id)
     {
         //

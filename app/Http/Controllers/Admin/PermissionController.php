@@ -11,11 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class PermissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Permission Listing Page
     public function index()
     {
         //
@@ -30,11 +26,7 @@ class PermissionController extends Controller
         return view('admin.permission.perm_list')->with($params);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // Permission Create Page
     public function create()
     {
         //
@@ -45,12 +37,7 @@ class PermissionController extends Controller
         return view('admin.permission.perm_create')->with($params);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Permission Store to DB
     public function store(Request $request)
     {
         //
@@ -69,12 +56,7 @@ class PermissionController extends Controller
         return redirect()->route('permission.index')->with('success', "The Permission <strong>$permission->name</strong> has successfully been created.");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Permission Delete Confirmation Page
     public function show($id)
     {
         //
@@ -94,12 +76,7 @@ class PermissionController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Permission Editing Page
     public function edit($id)
     {
         //
@@ -121,13 +98,7 @@ class PermissionController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Permission update to DB
     public function update(Request $request, $id)
     {
         //
@@ -153,12 +124,7 @@ class PermissionController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // Permission Delete from DB
     public function destroy($id)
     {
         //
